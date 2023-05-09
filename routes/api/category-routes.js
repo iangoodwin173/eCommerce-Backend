@@ -31,6 +31,7 @@ router.get('/:id', (req, res) => {
       model: Product,
       attributes: ['id', 'product_name', 'price']
     }]
+  })
     .then(categoryData => {
       if(!categoryData) {
         res.status(404).json({message: 'No Category Found'});
@@ -45,7 +46,7 @@ router.get('/:id', (req, res) => {
   });
   // find one category by its `id` value
   // be sure to include its associated Products
-});
+
 
 router.post('/', (req, res) => {
   // create a new category
